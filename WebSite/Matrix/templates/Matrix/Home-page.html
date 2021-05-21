@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="navbar-brand" src="https://image.freepik.com/free-vector/maths-chalkboard_23-2148177095.jpg" alt = "Logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li><a href="">Acasa</a></li>
+          <li><a href="/determinant_dim=3">Determinant</a></li>
+          <li><a href="/inversa_dim=3">Inversa</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Salutare</h1>
+      <p>In acest document va voi prezenta cateva lucruri despre inversa unei matrici</p>
+      <p>Inversa matricei A este o alta matrice care, inmultita cu matricea initiala, rezulta matricea unitate</p>
+      <p>Obs:</p>
+      <ul>
+        <li>Notiunea de Matrice Inversa are sens doar pentru matricile patratice</li>
+        <li>
+          Conditia necesara si suficienta ca o matrice patratica sa fie inversabila e ca determinantul ei sa fie nenul
+          <ul type = "square">
+            <li>Explicatie: det(A) ∙ det(Aˉ) = det(Iₙ) = 1<br>Deci, daca determinantul e nul => 0=1(fals)</li>
+          </ul>
+        </li>
+      </ul>
+      <p>Prin urmare, primul pas pentru a afla inversa este aflarea determinantului matricei initiale</p>
+
+      <h2>Determinant</h2>
+      <p>Pentru aflarea determinantului avem fila "Determinant"</p>
+      {% load static %}
+      <img src="{% static "Matrix/Determinant.jpg" %}" alt = "Determinant">
+
+      <h2>Inversa</h2>
+      <p>Fila "Inversa" e identica cu cea a determinantului, exceptand aparitia inversei, in cazul in care determinantul e nenul, in caz contrar aparand un mesaj de precizare</p>
+      <img src="{% static "Matrix/Inversa.jpg" %}" alt = "Determinant">
+
+      <h2>Precizari</h2>
+      <p>E important sa stiti cum puteti crea anumite expresii</p>
+      <ul>
+        <li>Pentru radical de ordin n din x puteti folosi: x^(1/n) sau root(x, n)</li>
+        <li>
+          Pentru logaritm:
+          <ul>
+            <li>loraritm natural: log(x) sau ln(x)</li>
+            <li>logaritm in orice alta baza: log(x, baza)<br>Obs. La afisare, logaritmul cu baza diferita de e va fi adus in baza e prin schimbarea bazei</li>
+          </ul>
+        </li>
+        <li>Pentru "𝜋" folositi "pi"</li>
+        <li>
+          Functii trigonometrice:
+          <ul type="square">
+            <li>Sinus de x -> sin(x)</li>
+            <li>Cosinus de x -> cos(x)</li>
+            <li>Tangenta de x -> tan(x)</li>
+            <li>Arcsinus de x -> asin(x)</li>
+            <li>Arccosinus de x -> acos(x)</li>
+            <li>Arctangenta de x -> atan(x)</li>
+          </ul>
+        <li>Pentru numere complexe se foloseste "I"(majuscula) pentru partea imaginara</li>
+        <li>Nu sunt acceptate forme ca: "2x", pentru asta folositi "2*x"</li>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Matrici</p>
+</footer>
+
+</body>
+</html>
